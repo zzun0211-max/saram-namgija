@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="사람을남기자에서 내 조건에 맞는 신차 리스·장기렌트 견적을 빠르고 투명하게 비교해 보세요.">
+  <meta name="theme-color" content="#0b2b26">
+  <!-- Apps Script를 배포한 뒤 content에 /exec 주소를 입력하세요. -->
+  <meta name="quote-endpoint" content="https://script.google.com/macros/s/AKfycbyDMLaRQqULwLIZo3x-gRPNUjTQTUn9g7lVIrgGIHqPw-NvgewgmAsGcxyaSDQhHoIqcg/exec">
+  <title>사람을남기자 | 신차 리스·장기렌트 비교견적</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="사람을남기자 홈">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" role="img"><path d="M7 24.5 11.4 15a4 4 0 0 1 3.6-2.3h10a4 4 0 0 1 3.6 2.3l4.4 9.5"/><path d="M5.5 25.5h29v6.2a2 2 0 0 1-2 2h-25a2 2 0 0 1-2-2z"/><circle cx="11" cy="28.5" r="2.1"/><circle cx="29" cy="28.5" r="2.1"/><path d="M13 18h14"/></svg>
+        </span>
+        <span>사람을<span class="brand-accent">남기자</span></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="주요 메뉴">
+        <a href="#service">서비스</a>
+        <a href="#benefits">이용 장점</a>
+        <a href="#process">진행 절차</a>
+        <a href="#faq">자주 묻는 질문</a>
+      </nav>
+
+      <a class="header-cta" href="#quote">무료 견적받기 <span aria-hidden="true">→</span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu" aria-label="모바일 메뉴" hidden>
+      <a href="#service">서비스</a>
+      <a href="#benefits">이용 장점</a>
+      <a href="#process">진행 절차</a>
+      <a href="#faq">자주 묻는 질문</a>
+      <a class="button button-primary" href="#quote">무료 견적받기</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> 복잡한 자동차 금융, 친구처럼 쉽게</p>
+          <h1>내 차를 만나는<br><em>가장 편한 방법</em></h1>
+          <p class="hero-description">신차 리스부터 장기렌트까지, 여러 조건을 꼼꼼히 비교해<br class="desktop-only"> 나에게 꼭 맞는 선택을 함께 찾아드립니다.</p>
+          <div class="hero-actions">
+            <a class="button button-lime" href="#quote">1분 무료 견적 <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="tel:15880000"><span class="phone-icon" aria-hidden="true">☎</span> 전화 상담 1588-0000</a>
+          </div>
+          <div class="trust-row" aria-label="서비스 특징">
+            <span><b>✓</b> 상담비 0원</span>
+            <span><b>✓</b> 빠른 출고 상담</span>
+            <span><b>✓</b> 맞춤 비교견적</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal delay-1" aria-label="신차 견적 비교 이미지">
+          <div class="visual-orbit orbit-one"></div>
+          <div class="visual-orbit orbit-two"></div>
+          <div class="car-stage">
+            <div class="floating-card card-rate">
+              <span class="floating-icon">₩</span>
+              <div><small>합리적인 월 납입금</small><strong>조건별 최적 견적</strong></div>
+            </div>
+            <div class="floating-card card-delivery">
+              <span class="floating-icon">✓</span>
+              <div><small>빠른 출고</small><strong>즉시출고 차량 확인</strong></div>
+            </div>
+            <svg class="car-illustration" viewBox="0 0 760 400" role="img" aria-label="새 자동차 일러스트">
+              <defs>
+                <linearGradient id="bodyGradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#e7f1ee"/><stop offset=".58" stop-color="#a9bdb8"/><stop offset="1" stop-color="#718782"/>
+                </linearGradient>
+                <linearGradient id="windowGradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#55746e"/><stop offset="1" stop-color="#163b35"/>
+                </linearGradient>
+                <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="25" stdDeviation="22" flood-color="#001d17" flood-opacity=".45"/></filter>
+              </defs>
+              <ellipse cx="390" cy="330" rx="280" ry="36" fill="#08241f" opacity=".55"/>
+              <g filter="url(#shadow)">
+                <path d="M85 258c8-39 31-64 70-74l94-23 69-74c17-18 42-29 67-29h95c32 0 56 8 78 30l76 76 55 14c28 7 47 28 51 57l5 41c2 15-9 28-24 28H112c-23 0-38-21-32-42z" fill="url(#bodyGradient)"/>
+                <path d="M291 157l54-58c12-13 28-19 46-19h44v77z" fill="url(#windowGradient)"/>
+                <path d="M457 80h23c19 0 34 6 48 19l56 58H457z" fill="url(#windowGradient)"/>
+                <path d="M456 82v75M275 165h324" fill="none" stroke="#d7e6e2" stroke-width="5" opacity=".8"/>
+                <path d="M113 231c76-21 416-25 568-4" fill="none" stroke="#f7fbfa" stroke-width="6" opacity=".65"/>
+                <path d="M122 268h541" fill="none" stroke="#5f7771" stroke-width="3"/>
+                <path d="M629 191l45 12 8 25-63-3z" fill="#c8ff3d"/>
+                <path d="M96 232l72-13-9 28-69 5z" fill="#f6fff0"/>
+                <circle cx="213" cy="287" r="58" fill="#102521"/><circle cx="213" cy="287" r="35" fill="#60756f"/><circle cx="213" cy="287" r="17" fill="#dce8e5"/>
+                <circle cx="590" cy="287" r="58" fill="#102521"/><circle cx="590" cy="287" r="35" fill="#60756f"/><circle cx="590" cy="287" r="17" fill="#dce8e5"/>
+                <path d="M363 179h38" stroke="#31534c" stroke-width="7" stroke-linecap="round"/>
+              </g>
+            </svg>
+            <div class="stage-line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="container stats-bar reveal delay-2">
+        <div><strong><span class="counter" data-target="24">0</span>시간</strong><p>빠른 맞춤견적 안내</p></div>
+        <i></i>
+        <div><strong><span class="counter" data-target="30">0</span>+</strong><p>주요 금융사 비교</p></div>
+        <i></i>
+        <div><strong><span class="counter" data-target="100">0</span>%</strong><p>비대면 상담 가능</p></div>
+        <i></i>
+        <div><strong>전국</strong><p>차량 인도 지원</p></div>
+      </div>
+    </section>
+
+    <section class="section service" id="service">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow dark"><span></span> SMART CHOICE</p>
+          <h2>어떤 방식이 맞을지<br>고민이라면 비교해 보세요</h2>
+          <p>목적과 상황에 따라 달라지는 선택, 핵심만 쉽게 알려드립니다.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="service-number">01</div>
+            <div class="service-icon lease-icon" aria-hidden="true">L</div>
+            <p class="card-label">자동차 리스</p>
+            <h3>번호판은 일반차처럼,<br>비용 처리는 간편하게</h3>
+            <p>개인·법인 사업자의 절세와 품위 있는 차량 운용에 적합합니다.</p>
+            <ul>
+              <li>일반 번호판 사용</li>
+              <li>보험 경력 유지 가능</li>
+              <li>만기 시 인수·반납 선택</li>
+            </ul>
+            <a href="#quote">리스 견적 알아보기 <span>→</span></a>
+          </article>
+          <article class="service-card featured reveal delay-1">
+            <div class="recommend-badge">가장 많이 선택해요</div>
+            <div class="service-number">02</div>
+            <div class="service-icon rent-icon" aria-hidden="true">R</div>
+            <p class="card-label">신차 장기렌트</p>
+            <h3>보험·세금 걱정 없이<br>월 렌탈료 한 번에</h3>
+            <p>초기 비용 부담을 낮추고 편하게 신차를 이용하고 싶은 분께 맞습니다.</p>
+            <ul>
+              <li>취등록세·자동차세 포함</li>
+              <li>사고 시 보험료 할증 없음</li>
+              <li>초기 비용 최소화</li>
+            </ul>
+            <a href="#quote">장기렌트 견적 알아보기 <span>→</span></a>
+          </article>
+          <article class="service-card reveal delay-2">
+            <div class="service-number">03</div>
+            <div class="service-icon compare-icon" aria-hidden="true">↔</div>
+            <p class="card-label">맞춤 비교견적</p>
+            <h3>한 번의 문의로<br>여러 조건을 한눈에</h3>
+            <p>예산과 선호 차종을 바탕으로 유리한 조건을 꼼꼼히 찾아드립니다.</p>
+            <ul>
+              <li>주요 금융사 조건 비교</li>
+              <li>전문 매니저 1:1 상담</li>
+              <li>출고까지 전 과정 관리</li>
+            </ul>
+            <a href="#quote">맞춤 비교 시작하기 <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section benefits" id="benefits">
+      <div class="container benefits-grid">
+        <div class="benefit-copy reveal">
+          <p class="eyebrow dark"><span></span> WHY FRIENDS</p>
+          <h2>좋은 조건보다 먼저,<br><em>좋은 상담</em>을 약속합니다</h2>
+          <p>차를 계약하는 일은 숫자만 비교해서 끝나지 않습니다. 어려운 조건은 쉽게 설명하고, 고객의 입장에서 끝까지 챙기겠습니다.</p>
+          <a class="button button-dark" href="#quote">내 조건 상담하기 <span>→</span></a>
+        </div>
+        <div class="benefit-list">
+          <article class="benefit-item reveal">
+            <span>01</span><div><h3>투명한 견적</h3><p>월 납입금뿐 아니라 보증금, 선납금, 잔존가치까지 빠짐없이 안내합니다.</p></div>
+          </article>
+          <article class="benefit-item reveal delay-1">
+            <span>02</span><div><h3>내 편 같은 매니저</h3><p>문의부터 차량 인도까지 담당 매니저가 바뀌지 않고 함께합니다.</p></div>
+          </article>
+          <article class="benefit-item reveal delay-2">
+            <span>03</span><div><h3>빠른 피드백</h3><p>오래 기다리지 않도록 재고와 심사 가능 여부를 신속히 확인합니다.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="process">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow dark"><span></span> EASY PROCESS <span></span></p>
+          <h2>복잡함은 줄이고, 과정은 간단하게</h2>
+          <p>문의부터 차량 인도까지 네 단계면 충분합니다.</p>
+        </div>
+        <ol class="process-list">
+          <li class="reveal"><span class="step-icon">✎</span><b>STEP 01</b><h3>간편 견적 신청</h3><p>원하는 차종과 연락처를 남겨주세요.</p></li>
+          <li class="reveal delay-1"><span class="step-icon">◫</span><b>STEP 02</b><h3>맞춤 견적 비교</h3><p>조건별 견적을 꼼꼼히 비교합니다.</p></li>
+          <li class="reveal delay-2"><span class="step-icon">✓</span><b>STEP 03</b><h3>심사 및 계약</h3><p>필요한 절차를 편하게 도와드립니다.</p></li>
+          <li class="reveal delay-3"><span class="step-icon">⌁</span><b>STEP 04</b><h3>차량 인도</h3><p>원하는 장소에서 새 차를 만나세요.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section quote-section" id="quote">
+      <div class="container quote-grid">
+        <div class="quote-copy reveal">
+          <p class="eyebrow"><span></span> FREE QUOTE</p>
+          <h2>내 차 견적,<br><em>1분이면 충분해요</em></h2>
+          <p>부담 없이 남겨주세요. 전문 매니저가 확인 후 빠르게 연락드리겠습니다.</p>
+          <div class="manager-note">
+            <div class="manager-avatar">FR</div>
+            <div><strong>사람을남기자 상담팀</strong><span>평일 09:00 - 18:00</span></div>
+          </div>
+        </div>
+        <form class="quote-form reveal delay-1" id="quote-form">
+          <label class="website-field" aria-hidden="true">웹사이트<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          <div class="form-row">
+            <label>고객명<input type="text" name="name" placeholder="이름을 입력해 주세요" required></label>
+            <label>연락처<input type="tel" name="phone" placeholder="010-0000-0000" inputmode="tel" required></label>
+          </div>
+          <div class="form-row">
+            <label>희망 차종<input type="text" name="car" placeholder="예: 그랜저, 쏘렌토"></label>
+            <label>상담 유형<select name="type" required><option value="">선택해 주세요</option><option>자동차 리스</option><option>신차 장기렌트</option><option>아직 잘 모르겠어요</option></select></label>
+          </div>
+          <label>문의사항<textarea name="message" rows="3" placeholder="희망 조건이나 궁금한 점을 자유롭게 적어주세요."></textarea></label>
+          <label class="privacy-check"><input type="checkbox" name="consent" value="동의" required><span>개인정보 수집 및 이용에 동의합니다. <button type="button" data-modal-open>내용보기</button></span></label>
+          <button class="button button-lime form-submit" type="submit">무료 견적 신청하기 <span>→</span></button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container faq-grid">
+        <div class="section-heading reveal">
+          <p class="eyebrow dark"><span></span> FAQ</p>
+          <h2>자주 묻는 질문</h2>
+          <p>더 궁금한 내용은 언제든 편하게 문의해 주세요.</p>
+        </div>
+        <div class="accordion reveal delay-1">
+          <article class="faq-item">
+            <button type="button" aria-expanded="false"><span>Q. 리스와 장기렌트의 가장 큰 차이는 무엇인가요?</span><i>＋</i></button>
+            <div class="faq-answer"><p>리스는 일반 번호판을 사용하고 개인 보험 경력을 이어갈 수 있습니다. 장기렌트는 보험·세금이 월 렌탈료에 포함되어 차량 관리가 더 간편합니다. 고객님의 사업 형태와 운전 경력에 따라 유리한 방식이 달라질 수 있습니다.</p></div>
+          </article>
+          <article class="faq-item">
+            <button type="button" aria-expanded="false"><span>Q. 초기 비용 없이도 이용할 수 있나요?</span><i>＋</i></button>
+            <div class="faq-answer"><p>신용 조건과 차종에 따라 보증금이나 선납금 없이 진행할 수 있습니다. 다만 금융사 심사 결과에 따라 보증 조건이 달라질 수 있어 상담을 통해 확인하는 것이 정확합니다.</p></div>
+          </article>
+          <article class="faq-item">
+            <button type="button" aria-expanded="false"><span>Q. 계약 기간은 보통 얼마나 되나요?</span><i>＋</i></button>
+            <div class="faq-answer"><p>일반적으로 36개월, 48개월, 60개월 중 선택합니다. 차량 교체 주기와 월 납입 예산을 고려해 가장 알맞은 기간을 안내해 드립니다.</p></div>
+          </article>
+          <article class="faq-item">
+            <button type="button" aria-expanded="false"><span>Q. 상담이나 견적 비교에 비용이 드나요?</span><i>＋</i></button>
+            <div class="faq-answer"><p>아니요. 상담과 비교견적은 무료이며, 계약을 강요하지 않습니다. 충분히 비교하고 편하게 결정하실 수 있습니다.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div>
+        <a class="brand footer-brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M7 24.5 11.4 15a4 4 0 0 1 3.6-2.3h10a4 4 0 0 1 3.6 2.3l4.4 9.5"/><path d="M5.5 25.5h29v6.2a2 2 0 0 1-2 2h-25a2 2 0 0 1-2-2z"/><circle cx="11" cy="28.5" r="2.1"/><circle cx="29" cy="28.5" r="2.1"/></svg></span>
+          <span>사람을<span class="brand-accent">남기자</span></span>
+        </a>
+        <p>내 차를 만나는 가장 편한 방법</p>
+      </div>
+      <div class="footer-contact"><span>고객센터</span><a href="tel:15880000">1588-0000</a><small>평일 09:00 - 18:00 (주말·공휴일 휴무)</small></div>
+    </div>
+    <div class="container footer-info">
+      <div class="footer-links"><button type="button" data-modal-open>개인정보처리방침</button><a href="#faq">이용안내</a></div>
+      <p>상호: 사람을남기자 <span>|</span> 대표: 홍길동 <span>|</span> 사업자등록번호: 000-00-00000<br>주소: 서울특별시 ○○구 ○○로 00 <span>|</span> 이메일: hello@saramnamgija.kr</p>
+      <small>Copyright © 2026 Saram Namgija. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <a class="floating-quote" href="#quote" aria-label="빠른 견적 문의"><span>견적</span><b>문의</b></a>
+
+  <dialog class="privacy-modal" id="privacy-modal">
+    <div class="modal-head"><h2>개인정보 수집 및 이용</h2><button type="button" data-modal-close aria-label="닫기">×</button></div>
+    <div class="modal-body">
+      <p><strong>수집 항목</strong><br>이름, 연락처, 희망 차종, 상담 유형, 문의 내용</p>
+      <p><strong>이용 목적</strong><br>리스·장기렌트 견적 상담 및 고객 문의 응대</p>
+      <p><strong>보유 기간</strong><br>상담 완료 후 1년 또는 고객의 삭제 요청 시까지</p>
+      <p>동의를 거부할 권리가 있으나, 거부 시 견적 상담 이용이 제한될 수 있습니다.</p>
+    </div>
+    <button class="button button-dark modal-confirm" type="button" data-modal-close>확인</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
